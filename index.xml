@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<html><body>
+<h2>Population - Nordic Countries</h2>
+<table border="1">
+<tr bgcolor="#9acd32">
+<th>Country</th>
+<th>Population</th>
+<th>Valuta</th>
+</tr>
+<tr>
+<td>Denmark</td>
+<td>5731118</td>
+<td/>
+</tr>
+<tr>
+<td>Faroe Islands</td>
+<td>49117</td>
+<td/>
+</tr>
+<tr>
+<td>Finland</td>
+<td>5495096</td>
+<td/>
+</tr>
+<tr>
+<td>Greenland</td>
+<td>56186</td>
+<td/>
+</tr>
+<tr>
+<td>Iceland</td>
+<td>334252</td>
+<td/>
+</tr>
+<tr>
+<td>Norway</td>
+<td>5232929</td>
+<td/>
+</tr>
+<tr>
+<td>Sweden</td>
+<td>9903122</td>
+<td/>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vikerfjell</title>
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+<!-- Google Fonts Roboto, alle typer -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!--  -->
+<script type="text/javascript" src="functions/funksjoner.js"></script>
+<!--  -->    
+</head>
+<body>
+<!-- her lager jeg en ny nav "joacim bergh" -->
+<header>
+  <a href="default.html" id="logo"><img id="logo-img" src="Bilder/Logo/logo-vikerfjell.png" height="62px" width="83px"></a>
+    <ul class="topnav" id="mytopnav">
+		<!-- SQL:select * from meny order by rekke; -->
+<li><a href='hjem.html'>HJEM</a></li>
+ <li><a href='hyttetomter.html'>HYTTETOMTER</a></li>
+ <li><a href='hytter.html'>HYTTER</a></li>
+ <li><a href='aktiviteter.html'>AKTIVITETER</a></li>
+ <li><a href='vei_og_fore.html'>VEI OG FØRE</a></li>
+ <li><a href='tjenester.html'>TJENESTER</a></li>
+ <li><a href='kontakt.html'>KONTAKT</a></li>
+ 		<div id="wrap">
+	        <form action="" autocomplete="on">
+               <input class="søk" id="search" name="search" type="text"  placeholder="Søk...."><input id="search_submit" value="Rechercher" type="submit">
+            </form>
+        </div>
+    </ul>
+      <a href="javascript:void(0);" id="menu-icon" onclick="myHamburgerFunction()"></a>
+</header>
+<?php
+/*
+$xml = simplexml_load_file("innbyggertall.xml");
+$xml2 = simplexml_load_file("kursliste.xml");
+
+$kode = $xml2->xpath('//kode');
+foreach($kode as $k){
+    $xml->addChild("kode", $k);
+}
+
+$midtkurs = $xml2->xpath('//midtkurs');
+foreach($midtkurs as $m){
+    $xml->addChild("midtkurs", $m);
+}
+
+$xml->asXML('doc.xml');
+
+$XML1 = new DOMDocument();
+$XML1->load( 'doc.xml' );
+
+$xslt = new XSLTProcessor();
+
+$XSL = new DOMDocument();
+$XSL->load( 'index.xsl' );
+$xslt->importStylesheet($XSL);
+
+print $xslt->transformToXML($XML1);
+*/
+
+
+$xmlFiles = [
+    'innbyggertall.xml',
+    'kursliste.xml'
+  ];
+  
+  $targetDom = new DOMDocument();
+  $xslt = new XSLTProcessor();
+  
+  $XSL = new DOMDocument();
+  $XSL->load( 'index.xsl' );
+  $xslt->importStylesheet($XSL);
+
+  $rootNode = $targetDom->appendChild(
+    $targetDom->createElement('root')
+  );
+  
+  foreach ($xmlFiles as $xmlFile) {
+    $importDom = new DOMDocument();
+    $importDom->load($xmlFile);
+    foreach ($importDom->documentElement->childNodes as $node) {
+      $rootNode->appendChild($targetDom->importNode($node, TRUE));
+    }
+  }
+  
+  $targetDom->save("merged.xml");
+  print $xslt->transformToXML($targetDom);
+  
+?> 
+</body>
+</html>
