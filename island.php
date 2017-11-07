@@ -15,6 +15,7 @@
 <!-- her lager jeg en ny nav "joacim bergh" -->
 <aside id="mytopnav">
     <div id="mySidenav" class="sidenav" >
+        <a href="hjem.php">Hjem</a>
         <a href="sverige.php">Sverige</a>
         <a href="danmark.php">Danmark</a>
         <a href="island.php">Island</a>
