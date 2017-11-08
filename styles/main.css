@@ -443,7 +443,7 @@ h4.section-tekst{
 /* Steffen 06.03.2017 */
 .map {
 	width:100%;
-	height:1000px;	
+	height:800px;	
 }
 
 .map-wrap {
@@ -893,7 +893,7 @@ form h2{
 .infotekst{
     padding: 2px 30px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 14px;
     color: #366568;
 }
 .infoheader{
